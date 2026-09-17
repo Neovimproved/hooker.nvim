@@ -48,7 +48,7 @@ local function set_hooks_file_path(directory)
     hooks_file_path = vim.fs.joinpath(hooks_directory, hooks_file_basename)
 
     local target_dir = hooker_config.target_directory
-    target_dir = vim.fs.relpath(vim.fn.expand("~"), target_dir) or target_dir
+    target_dir = vim.fs.relpath(vim.fs.normalize("~"), target_dir) or target_dir
 
     hooks_link_file_path = vim.fs.joinpath(hook_links_directory, vim.fn.sha256(target_dir))
 
