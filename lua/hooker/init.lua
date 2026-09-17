@@ -448,6 +448,8 @@ function M.setup(opts)
         hooker_config = default_options
     end
 
+    _G.Hooker = M
+
     set_hooks_file_path(hooker_config.target_directory)
 
     M.options = setmetatable({}, {
